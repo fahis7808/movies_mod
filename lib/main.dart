@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_mod/util/theme.dart';
+import 'package:movies_mod/view/screen/home_page.dart';
 import 'package:movies_mod/view/screen/login_page.dart';
 
 void main() {
@@ -22,9 +23,10 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.getThemeData(ThemeMode.light),
           darkTheme: AppTheme.getThemeData(ThemeMode.dark),
           themeMode: theme,
-          initialRoute: 'loginPage',
+          initialRoute: 'homePage',
           routes: {
-            'loginPage' :(context) =>const LoginPage()
+            'loginPage' :(context) =>const LoginPage(),
+            'homePage' :(context) =>const HomePage()
           },
         );
       }
