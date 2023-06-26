@@ -5,19 +5,27 @@ void main() {
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Movies Mod',
-      debugShowCheckedModeBanner: false,
-      initialRoute: 'loginPage',
-      routes: {
-        'loginPage' :(context) =>const LoginPage()
-      },
+    return ValueListenableBuilder(
+      valueListenable: themeNotifier,
+      builder: (context, theme, _) {
+        return MaterialApp(
+          title: 'Movies Mod',
+          debugShowCheckedModeBanner: false,
+
+          themeMode: theme,
+          initialRoute: 'loginPage',
+          routes: {
+            'loginPage' :(context) =>const LoginPage()
+          },
+        );
+      }
     );
   }
 }
