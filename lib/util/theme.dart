@@ -42,6 +42,7 @@ class AppTheme {
         cardColor: data.colorScheme.surface,
         listTileTheme: ListTileThemeData(
             tileColor: data.colorScheme.background,
+            titleTextStyle: data.textTheme.displayLarge,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius),
             )),
@@ -108,7 +109,7 @@ class AppTheme {
           titleTextStyle: data.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           //actionsPadding: const EdgeInsets.only(left: 20,right: 20,bottom: 30,top: 5)
         ),
-        dividerTheme: DividerThemeData(thickness: 0.8, color: data.colorScheme.outline.withOpacity(.3)),
+        dividerTheme: DividerThemeData(thickness: 0.8, color: data.colorScheme.outline.withOpacity(.5)),
         visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
         scaffoldBackgroundColor: data.colorScheme.background,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -190,7 +191,7 @@ class DarkThemeStyle extends ThemeStyle {
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xff0445a8), onPrimary: Color(0xFFFFFFFF),
-  primaryContainer: Color(0xFF456805), onPrimaryContainer: Color(0xFFFFFFFF),
+  primaryContainer: Color(0xFF636560), onPrimaryContainer: Color(0xFFFFFFFF),
   inversePrimary: Color(0xFF0D91B9),
   secondary: Color(0xFF6905D3), onSecondary: Color(0xFFF5F9FF),
   secondaryContainer: Color(0xFF011921),
@@ -249,8 +250,8 @@ extension CopyWithTextTheme on TextTheme {
       bodyMedium: bodyMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 16,fontWeight: FontWeight.bold),
       bodyLarge: bodyLarge?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 16, fontWeight: FontWeight.w500),
       displaySmall: displaySmall?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 15),
-      // displayMedium: displayMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 45),
-      // displayLarge: displayLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 57),
+      displayMedium: displayMedium?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 18),
+      displayLarge: displayLarge?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 18,fontWeight: FontWeight.bold),
       headlineSmall: headlineSmall?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 18),
       headlineMedium: headlineMedium?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 26,fontWeight: FontWeight.bold),
       // headlineLarge: headlineLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 32),
