@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_mod/util/theme.dart';
 import 'package:movies_mod/view/screen/login_page.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Movies Mod',
           debugShowCheckedModeBanner: false,
-
+          theme: AppTheme.getThemeData(ThemeMode.light),
+          darkTheme: AppTheme.getThemeData(ThemeMode.dark),
           themeMode: theme,
           initialRoute: 'loginPage',
           routes: {

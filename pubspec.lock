@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  auto_binding_field:
+    dependency: "direct main"
+    description:
+      name: auto_binding_field
+      sha256: a99044331973c5fbb42225b59bb16b23648f7d7d54f3a4249765e4e1ee43e30b
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.7"
   boolean_selector:
     dependency: transitive
     description:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const double borderRadius = 10;
+const double borderRadius = 5;
 
 class AppTheme {
   static final Typography _typography = Typography.material2021();
@@ -68,7 +68,7 @@ class AppTheme {
             contentPadding: const EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
             isDense: false,
             filled: true,
-            fillColor: data.colorScheme.inversePrimary.withOpacity(0.1),
+            fillColor: data.colorScheme.surfaceVariant.withOpacity(0.5),
             errorStyle: data.textTheme.bodySmall?.copyWith(color: data.colorScheme.error),
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
@@ -83,7 +83,7 @@ class AppTheme {
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   width: 0.7,
-                  color: data.colorScheme.tertiary,
+                  color: data.colorScheme.primary,
                 ),
                 gapPadding: 0,
                 borderRadius: BorderRadius.circular(borderRadius) //<-- SEE HERE
@@ -189,20 +189,20 @@ class DarkThemeStyle extends ThemeStyle {
 
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color(0xff011b4f), onPrimary: Color(0xFFFFFFFF),
+  primary: Color(0xff0445a8), onPrimary: Color(0xFFFFFFFF),
   primaryContainer: Color(0xFF456805), onPrimaryContainer: Color(0xFFFFFFFF),
   inversePrimary: Color(0xFF0D91B9),
-  secondary: Color(0xFF00286B), onSecondary: Color(0xFFF5F9FF),
+  secondary: Color(0xFF6905D3), onSecondary: Color(0xFFF5F9FF),
   secondaryContainer: Color(0xFF011921),
   onSecondaryContainer: Color(0xFF001F27),
   tertiary: Color(0xFFF5F9FF), onTertiary: Color(0xFF000000),
   tertiaryContainer: Color(0xFFF7D8FF), onTertiaryContainer: Color(0xFF271430),
-  background: Color(0xFFFFFFFF), onBackground: Color(0xFF000000),
+  background: Color(0xff012a56), onBackground: Color(0xFF000000),
   surface: Color(0xFFFFFFFF), onSurface: Color(0xFF1A1C1E),
   surfaceTint: Color(0xFF005FAF),
   error: Color(0xFFEA1505), onError: Color(0xFFFFFFFF),
   errorContainer: Color(0xFFFFDAD6), onErrorContainer: Color(0xFFB00020),
-  surfaceVariant: Color(0xFF49454F), onSurfaceVariant: Color(0xFFFFFFFF),
+  surfaceVariant: Color(0xFF606060), onSurfaceVariant: Color(0xFFFFFFFF),
   inverseSurface: Color(0xFF2F3033), onInverseSurface: Color(0xFFF1F0F4),
   shadow: Color(0xFF000000),
   outlineVariant: Color(0xFF534F4E),
@@ -246,20 +246,20 @@ extension CopyWithTextTheme on TextTheme {
     final fontFamily = GoogleFonts.lato().fontFamily;
     return copyWith(
       bodySmall: bodySmall?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 12),
-      bodyMedium: bodyMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 14),
-      bodyLarge: bodyLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 16, fontWeight: FontWeight.w500),
-      displaySmall: displaySmall?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 36),
-      displayMedium: displayMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 45),
-      displayLarge: displayLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 57),
-      headlineSmall: headlineSmall?.copyWith(color: colorScheme?.primary ?? color, fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 20),
-      headlineMedium: headlineMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 24),
-      headlineLarge: headlineLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 32),
-      titleSmall: titleSmall?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 14),
-      titleMedium: titleMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 16),
-      titleLarge: titleLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 22,fontWeight: FontWeight.bold),
-      labelSmall: labelSmall?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 12),
-      labelMedium: labelMedium?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 12),
-      labelLarge: labelLarge?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 14),
+      bodyMedium: bodyMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 16,fontWeight: FontWeight.bold),
+      bodyLarge: bodyLarge?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 16, fontWeight: FontWeight.w500),
+      displaySmall: displaySmall?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 15),
+      // displayMedium: displayMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 45),
+      // displayLarge: displayLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 57),
+      // headlineSmall: headlineSmall?.copyWith(color: colorScheme?.primary ?? color, fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 20),
+      headlineMedium: headlineMedium?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 26,fontWeight: FontWeight.bold),
+      // headlineLarge: headlineLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 32),
+      // titleSmall: titleSmall?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 14),
+      // titleMedium: titleMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 16),
+      // titleLarge: titleLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 22,fontWeight: FontWeight.bold),
+      // labelSmall: labelSmall?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 12),
+      // labelMedium: labelMedium?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 12),
+      // labelLarge: labelLarge?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 14),
     );
   }
 }
