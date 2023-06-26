@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:movies_mod/view/screen/favourite.dart';
 import 'package:movies_mod/view/screen/home.dart';
 import 'package:movies_mod/view/screen/profile.dart';
@@ -16,9 +16,9 @@ class HomePageProvider extends ChangeNotifier{
   }
 
   final List<String> imageList = [
-    'assets/images/football_3.png',
-    'assets/images/football_4.png',
-    'assets/images/football_5.png',
+    'assets/Image/extraction_2.png',
+    'assets/Image/extraction_2.png',
+    'assets/Image/extraction_2.png',
   ];
 
   List pages = [

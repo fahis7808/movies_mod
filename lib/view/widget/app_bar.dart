@@ -6,13 +6,19 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Icon(Icons.menu),
-        Text('MOVIES MOD',style: context.textTheme.headlineMedium,),
-        const Icon(Icons.bookmark_border)
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Icon(Icons.menu),
+          Text(
+            'MOVIES MOD',
+            style: context.textTheme.headlineMedium,
+          ),
+          const Icon(Icons.bookmark_border)
+        ],
+      ),
     );
   }
 }
