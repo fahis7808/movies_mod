@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_mod/view/widget/app_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -39,7 +40,10 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          body: SafeArea(child: value.pages[value.selectedIndex]),
+          body: SafeArea(child: Column(children: [
+            const CustomAppBar(),
+            Expanded(child: value.pages[value.selectedIndex])
+          ],)),
         );
       }),
     );
