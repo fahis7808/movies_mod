@@ -254,13 +254,7 @@ extension CopyWithTextTheme on TextTheme {
       displayLarge: displayLarge?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 18,fontWeight: FontWeight.bold),
       headlineSmall: headlineSmall?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontWeight: FontWeight.bold, fontSize: 15),
       headlineMedium: headlineMedium?.copyWith(color: colorScheme?.onPrimary ?? color, fontFamily: fontFamily, fontSize: 26,fontWeight: FontWeight.bold),
-      // headlineLarge: headlineLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 32),
-      // titleSmall: titleSmall?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 14),
-      // titleMedium: titleMedium?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 16),
-      // titleLarge: titleLarge?.copyWith(color: colorScheme?.onBackground ?? color, fontFamily: fontFamily, fontSize: 22,fontWeight: FontWeight.bold),
       labelSmall: labelSmall?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 13),
-      // labelMedium: labelMedium?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 12),
-      // labelLarge: labelLarge?.copyWith(color: colorScheme?.outline ?? color, fontFamily: fontFamily, fontSize: 14),
     );
   }
 }

@@ -8,6 +8,9 @@ class Favourite extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: context.theme.colorScheme.background,
+      body: Center(
+        child: Text('No favourite shows',style: context.textTheme.displayLarge,),
+      ),
     );
   }
 }
