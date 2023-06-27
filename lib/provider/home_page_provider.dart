@@ -1,11 +1,17 @@
 
+import 'dart:convert';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:movies_mod/model/popular_model.dart';
+import 'package:movies_mod/model/user_model.dart';
 import 'package:movies_mod/util/api_calling.dart';
 import 'package:movies_mod/view/screen/favourite.dart';
 import 'package:movies_mod/view/screen/home.dart';
 import 'package:movies_mod/view/screen/profile.dart';
 import 'package:movies_mod/view/screen/search.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../model/trending_model.dart';
 
@@ -21,6 +27,14 @@ class HomePageProvider extends ChangeNotifier{
     notifyListeners();
   }
 
+  UserModel? userModel;
+  String? id;
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  bool _isSignedIn = false;
+
+  bool get isSignedIn => _isSignedIn;
+
+
   List popularData =[];
   List<PopularModel> popularList =[];
   List<PopularModel> carousalList =[];
@@ -28,16 +42,6 @@ class HomePageProvider extends ChangeNotifier{
   List trendingData = [];
   List<TrendingModel> trendingList = [];
 
-  final List<String> imageList = [
-    'assets/Image/extraction_2.png',
-    'assets/Image/extraction_2.png',
-    'assets/Image/extraction_2.png',
-  ];
-
-  HomePageProvider(){
-    fetchPopularData();
-    fetchTrendingData();
-  }
 
   List pages = [
     Home(),
@@ -46,7 +50,30 @@ class HomePageProvider extends ChangeNotifier{
     Profile()
   ];
 
+  HomePageProvider(){
+    fetchPopularData();
+    fetchTrendingData();
+    getDataFromSP();
+  }
 
+
+  Future getDataFromSP() async {
+    SharedPreferences s = await SharedPreferences.getInstance();
+    String data = s.getString("user_model") ?? '';
+    userModel = UserModel.fromMap(jsonDecode(data));
+    id = userModel!.id;
+    notifyListeners();
+  }
+
+  Future userSignOut() async {
+    SharedPreferences s = await SharedPreferences.getInstance();
+    await _firebaseAuth.signOut();
+    _isSignedIn = false;
+    notifyListeners();
+    s.clear();
+    SystemNavigator.pop();
+    notifyListeners();
+  }
 
   Future fetchPopularData() async{
     var res = await ApiCalling.fetchData(

@@ -123,6 +123,9 @@ class LoginPage extends StatelessWidget {
                       ),
                       const Height(15),
                       InkWell(
+                        onTap: (){
+                           data.signInWithGoogle(context);
+                        },
                         child: Container(
                           width: double.infinity,
                           height: 50,

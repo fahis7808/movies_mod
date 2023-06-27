@@ -63,12 +63,12 @@ class Home extends StatelessWidget {
                         enlargeCenterPage: true,
                       ),
                     ),
-                    Height(15),
+                    const Height(15),
                     Text(
                       'Popular Movies',
                       style: context.textTheme.displayLarge,
                     ),
-                    Height(15),
+                    const Height(15),
                     SizedBox(
                       height: 230,
                       child: ListView.builder(
@@ -105,12 +105,12 @@ class Home extends StatelessWidget {
                             );
                           }),
                     ),
-                    Height(15),
+                    const Height(15),
                     Text(
                       'Trending Movies',
                       style: context.textTheme.displayLarge,
                     ),
-                    Height(15),
+                    const Height(15),
                     SizedBox(
                       height: 230,
                       child: ListView.builder(
