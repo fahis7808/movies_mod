@@ -40,16 +40,20 @@ class Home extends StatelessWidget {
                                   image: NetworkImage(
                                       'https://image.tmdb.org/t/p/w500${e.backdropImage}'),
                                   fit: BoxFit.fill)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Row(
-                                children: [
-                                  Text('Fast x',style: context.textTheme.displayLarge,),
-
-                                ],
-                              )
-                            ],
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(e.title.toString(),style: context.textTheme.displayLarge,),
+                                  ],
+                                ),
+                                Text(e.rating.toString(),style: context.textTheme.displayLarge,),
+                              ],
+                            ),
                           )
                         );
                       }).toList(),
@@ -143,21 +147,6 @@ class Home extends StatelessWidget {
                             );
                           }),
                     ),
-
-                   /* ShaderMask(
-                      blendMode: BlendMode.srcATop,
-                      shaderCallback: (Rect bounds) {
-                        return ui.Gradient.linear(
-                          Offset.zero,
-                          Offset(0.0, bounds.height),
-                          [Colors.black,Colors.blueAccent],
-                        );
-                      },
-                      child:Image.network(
-                        'https://image.tmdb.org/t/p/w500/tmU7GeKVybMWFButWEGl2M4GeiP.jpg',
-                        fit: BoxFit.cover,
-                      ),
-                    )*/
                   ],
                 ),
               ),

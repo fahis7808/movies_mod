@@ -9,6 +9,7 @@ class PopularModel with _$PopularModel {
     @JsonKey(name: 'poster_path')String? posterImage,
     @JsonKey(name: 'backdrop_path')String? backdropImage,
     @JsonKey(name: 'original_title')String? originalTitle,
+    @JsonKey(name: 'vote_average')double? rating,
     String? overview,
     String? title,
   }) = _PopularModel;

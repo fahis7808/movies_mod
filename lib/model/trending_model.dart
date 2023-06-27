@@ -7,7 +7,9 @@ part 'trending_model.g.dart';
 class TrendingModel with _$TrendingModel {
   const factory TrendingModel({
     @JsonKey(name: 'poster_path')String? posterImage,
+    @JsonKey(name: 'backdrop_path')String? backdropImage,
     @JsonKey(name: 'original_title')String? originalTitle,
+    @JsonKey(name: 'vote_average')double? rating,
     String? overview,
     String? title,
   }) = _TrendingModel;
