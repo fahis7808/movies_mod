@@ -40,6 +40,13 @@ dependencies:
   nb_utils: ^5.0.8
   auto_binding_field: ^0.0.7
   carousel_slider: ^4.2.1
+  google_sign_in: ^6.1.4
+  firebase_auth: ^4.6.3
+  firebase_core: ^2.14.0
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.1
+  video_player: ^2.6.1
+  http: ^1.1.0
 
 
 dev_dependencies:
@@ -52,6 +59,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.5
+  freezed: ^2.3.5
+  json_serializable: ^6.7.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

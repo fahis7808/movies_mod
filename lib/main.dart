@@ -1,9 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_mod/util/theme.dart';
 import 'package:movies_mod/view/screen/home_page.dart';
 import 'package:movies_mod/view/screen/login_page.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.getThemeData(ThemeMode.light),
           darkTheme: AppTheme.getThemeData(ThemeMode.dark),
           themeMode: theme,
-          initialRoute: 'homePage',
+          initialRoute: 'loginPage',
           routes: {
             'loginPage' :(context) =>const LoginPage(),
             'homePage' :(context) =>const HomePage()
